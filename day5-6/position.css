@@ -1,0 +1,216 @@
+body {
+    width: 960px;
+    height: 862px;
+    margin: 0px;
+}
+
+#title {
+    height: 70px;
+    background-color: rgb(48, 44, 44);
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
+
+#title p {
+    position: absolute;
+    top: 3.7px;
+    left: 130px;
+    font-size: 19px;
+}
+
+#title ul {
+    position: absolute;
+    top: -13px;
+    right: 50px;
+}
+
+#title ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#title a:visited {
+    color: #fff;
+}
+
+#guide {
+    width: 100%;
+    height: 120px;
+    background-color: rgba(76, 212, 83, 0.692);
+    position: relative;
+    margin-top: 0px;
+    border: cadetblue 1px solid;
+}
+
+#guide a {
+    text-decoration: none;
+}
+
+#guide ul {
+    list-style-type: none;
+    position: absolute;
+    bottom: -8px;
+    right: 60px;
+}
+
+#guide ul li {
+    display: inline-block;
+    width: 25px;
+    height: 35px;
+    margin-right: 0px;
+    transition: 0.5s all;
+    background-color: rgb(245, 240, 222);
+    text-align: center;
+    line-height: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#guide ul li:hover,
+:active {
+    height: 45px;
+}
+
+#container {
+    width: 960px;
+    border: 1px solid gray;
+    height: 580px;
+    margin-bottom: -16px;
+}
+
+#guide1 {
+    width: 100%;
+    height: 60px;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgb(192, 187, 187);
+    position: relative;
+    border-top: 0px;
+}
+
+.guide3 {
+    list-style-type: none;
+    position: absolute;
+    left: 90px;
+    top: 4px;
+}
+
+.guide3 li {
+    display: inline;
+    background-color: rgb(202, 202, 202);
+    text-align: center;
+    line-height: 39px;
+    /*垂直水平居中*/
+    font-size: 13px;
+    margin-left: -4.5px;
+}
+
+.guide3 li a {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(229, 226, 226);
+    border: rgb(192, 187, 187) 1px solid;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom: 0px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.guide3 li a:focus,
+li a:hover {
+    background-color: white;
+}
+
+
+/*a的focu可以保持*/
+
+.guide3 li a:visited {
+    color: black;
+}
+
+#foot {
+    width: 100%;
+    height: 90px;
+    background-color: rgb(48, 44, 44);
+    color: #ffffff;
+    padding: 0px;
+    text-align: center;
+}
+
+
+/*中间三列 圣杯布局*/
+
+#content {
+    background-color: white;
+    width: 100%;
+    height: 522px;
+    float: left;
+}
+
+#left {
+    background-color: white;
+    height: 522px;
+    width: 124.8px;
+    float: left;
+    margin-left: -100%;
+    /*利用负边距 在浮动的情况下布局 ——圣杯式*/
+    position: relative;
+    left: -124.8px;
+}
+
+#right {
+    background-color: white;
+    height: 522px;
+    width: 124.8px;
+    float: left;
+    margin-left: -124.8px;
+    /*利用负边距 在浮动的情况下布局 ——圣杯式*/
+    position: relative;
+    right: -124.8px;
+}
+
+
+/*父类创建左右内边距，使*/
+
+#container2 {
+    padding: 0px 124.8px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+article {
+    padding: 10px;
+    margin: 4px;
+    height: 123px;
+}
+
+article p {
+    text-align: center;
+    line-height: 80px;
+}
+
+#a1 article {
+    flex: 1 100px;
+    border: 1px solid grey;
+}
+
+#a1 article:nth-of-type(3) {
+    flex: 0.75 100px;
+}
+
+#a2 article {
+    flex: 100px;
+    border: 1px solid grey;
+}
+
+#a3 article {
+    flex: 150px;
+    border: 1px solid grey;
+}
