@@ -42,33 +42,32 @@
     </ul>
 
     <script>
-        var a = 0,
-            i, li, ul, span, button;
+        let i;
+
+        const ul = document.querySelector('ul'); //引用列表项ul
         //点击add按钮，增加一个自定义名列表项
         document.querySelector('button').onclick = function() {
             i = document.querySelector('input').value; //获取输入框的值
             console.log(i);
             document.querySelector('input').value = ''; //清空输入框
-            //创建三个元素，用于引用
-            li = document.createElement('li');
-            span = document.createElement('span');
-            button = document.createElement('button');
+            //用const创建三个元素，用于引用
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            const button = document.createElement('button');
+            //把创建的元素，文本内容添加到相应的父类  把span和button作为list项的子节点。
             li.appendChild(span);
             li.appendChild(button);
             span.textContent = i;
             button.textContent = 'Delete';
-            button.setAttribute('name', 'delete') //设置button名字属性为delete
-            ul = document.querySelector('ul'); //引用列表项ul
-            ul.appendChild(li); //向ul列表项增加子节点li
+            ul.appendChild(li);
+            //向ul列表项增加子节点li
+            button.onclick = function(e) {
+                ul.removeChild(li);
+            }
+            input.focus(); //，使用focus()方法聚焦输入框准备输入下一个购物项。
         }
 
         //点击删除按钮，删除整个列表项
-        document.getElementsByName("delete").onclick = function() {
-            console.log("1");
-            btn = document.getElementsByName("delete");
-            li = btn.parentNode;
-            li.parentNode.removeChild(li);
-        }
     </script>
 </body>
 
