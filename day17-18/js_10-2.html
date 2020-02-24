@@ -31,9 +31,12 @@
             console.log(length);
             if (bit === length) {
                 document.getElementById("result").innerHTML = "运算结果是：" + bin2;
+                document.getElementById("result").innerHTML = bin2;
+
             } else if (bit < length) {
                 document.getElementById("result").innerHTML = "运算结果是：" + bin2;
-                console.log("输入二进制位数小于实际位数");
+                alert("输入二进制位数小于实际位数");
+                document.getElementById("result").innerHTML = bin2;
             }
 
         }
