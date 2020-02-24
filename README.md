@@ -3,3 +3,5 @@ day5-6
  [demo](https://uuhh25.github.io/-/day5-6/position.html)
 day16.
 [demo](https://uuhh25.github.io/-/day16/resume.html)
+day17-18
+[demo](https://uuhh25.github.io/-/day17-18/resume.html)
