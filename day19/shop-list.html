@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+        input {
+            width: 50px;
+            transition: 0.5s all;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+        
+        input:focus {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+        <label for="item">Enter a new item:</label>
+        <input type="text" name="item" id="item">
+        <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        var a = 0,
+            i, li, ul, span, button;
+        //点击add按钮，增加一个自定义名列表项
+        document.querySelector('button').onclick = function() {
+            i = document.querySelector('input').value; //获取输入框的值
+            console.log(i);
+            document.querySelector('input').value = ''; //清空输入框
+            //创建三个元素，用于引用
+            li = document.createElement('li');
+            span = document.createElement('span');
+            button = document.createElement('button');
+            li.appendChild(span);
+            li.appendChild(button);
+            span.textContent = i;
+            button.textContent = 'Delete';
+            button.setAttribute('name', 'delete') //设置button名字属性为delete
+            ul = document.querySelector('ul'); //引用列表项ul
+            ul.appendChild(li); //向ul列表项增加子节点li
+        }
+
+        //点击删除按钮，删除整个列表项
+        document.getElementsByName("delete").onclick = function() {
+            console.log("1");
+            btn = document.getElementsByName("delete");
+            li = btn.parentNode;
+            li.parentNode.removeChild(li);
+        }
+    </script>
+</body>
+
+</html>
