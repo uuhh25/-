@@ -1,0 +1,35 @@
+body {
+    margin: 0px auto;
+}
+
+#title {
+    float: left;
+    width: 18%;
+    color: white;
+    background-color: rgb(62, 131, 209);
+    height: 940px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#content {
+    float: left;
+}
+
+ul {
+    margin-bottom: 30px;
+}
+
+.inf1 li {
+    display: inline;
+}
+
+li {
+    margin-right: 30px;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+li p {
+    font-weight: normal;
+}
