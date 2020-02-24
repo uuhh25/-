@@ -6,8 +6,6 @@
 </head>
 <style>
     div {
-        width: 200px;
-        height: 200px;
         border: 2px solid gray;
     }
     
@@ -32,38 +30,33 @@
 
 <body>
     <div>
-        <p>结果</p>
-        <table id="calculater">
-            <tr>
-                <td><button type="button" class="number">1</button></td>
-                <td><button type="button" class="number">2</button></td>
-                <td><button type="button" class="number">3</button></td>
-            </tr>
-            <tr>
-                <td><button type="button" class="number">4</button></td>
-                <td><button type="button" class="number">5</button></td>
-                <td><button type="button" class="number">6</button></td>
-            </tr>
-            <tr>
-                <td><button type="button" class="number">7</button></td>
-                <td><button type="button" class="number">8</button></td>
-                <td><button type="button" class="number">9</button></td>
-            </tr>
+
+        <table id="99">
+            <th>99乘法表</th>
+
+
         </table>
-        <button id="add-btn">加</button>
-        <button id="del-btn">减</button>
-        <button id="times-btn">乘</button>
-        <button id="divide-btn">除</button>
+
     </div>
 </body>
 <script>
-    let i, j, result;
-    for (i = 1; i < 10; i++) {
-        for (j = 1; j < 10; j++) {
-            result = i * j;
-            console.log(result);
+    /*let i, j, result;
+                for (i = 1; i < 10; i++) {
+                    for (j = 1; j < 10; j++) {
+                        result = i * j;
+                        console.log(i + '*' + j + '=' + result);
+                    }
+                }99乘法表*/
+    document.write('<table border="1">'); //表格打印
+    for (let i = 0; i <= 9; i++) {
+        document.write('<tr>'); //打印表格行标签
+        for (let j = 1; j <= i; j++) {
+            document.write('<td>' + i + "*" + j + "=" + (i * j) + "</td>");
         }
+        document.write('</tr>');
+
     }
+    document.write('<table>');
 </script>
 
 </html>
