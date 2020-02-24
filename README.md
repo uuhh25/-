@@ -4,4 +4,7 @@ day5-6
 day16.
 [demo](https://uuhh25.github.io/-/day16/resume.html)
 day17-18
-[demo](https://uuhh25.github.io/-/day17-18/resume.html)
+[简历demo](https://uuhh25.github.io/-/day17-18/resume.html)
+[乘法表demo](https://uuhh25.github.io/-/day17-18/js_99乘法.html)
+[进制转换demo](https://uuhh25.github.io/-/day17-18/js_10-2.html)
+[找出和3有关系的数demo](https://uuhh25.github.io/-/day17-18/js_3-muti.html)
