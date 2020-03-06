@@ -14,4 +14,4 @@ day19
 [Dom元素选择2](https://uuhh25.github.io/-/day19/js_selectElement_Selector.html)<br/>
 
 Vue的练习
-[v-text\v-html\v-on](https://uuhh25.github.io/-/Vue/Vue-1/index.html)
+[todolist](https://uuhh25.github.io/-/Vue/Vue-1/index4-Todolist.html)
