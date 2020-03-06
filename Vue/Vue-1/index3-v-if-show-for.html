@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>v-if v-show v-for指令</title>
+        <script src="./vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+           <div v-show="show">hello world</div>
+           <!-- v-if 是将绑定的div给删除  v-show 是将dispaly修改为none 只是隐藏 -->
+           <!-- v-show 相对于更好，性能更高 -->
+           <!-- v-if 是控制元素的存在 v-show是控制元素的显示 -->
+           <button @click="handleClick">toggle</button>
+           <ul>
+               <li v-for="(item,index) of list" :key="index">{{item}} </li> 
+        <!--item 即为数组中的元素 用作 循环内容的展示，  给标签多绑定一个
+        属性key 提升渲染效率， 且要防止 key 使用的变量会相同
+        用索引的方法也不好 对数组多操作的话 后期要使用其他方法-->
+           </ul>
+        </div>
+
+        <script>
+            new Vue({
+                el:"#root",
+                data:{
+                    show:true,  //false
+                    list:[1,2,3]
+                },
+                methods:{
+                    handleClick : function(){
+                        this.show = !this.show;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue入门</title>
+    <script src="vue.js"></script> 
+</head>
+<body>
+   <!--    挂载点、模板、实例之间的关系-->
+    <div id="root">
+        <div v-on:click="handleClick">{{content}} </div>   <!-- v-text,v-html 都可以指定标签内的内容
+    但 v-text 会对使用的变量进行转义、v-html不会转义-->
+    <!-- v-on 给标签绑定一个事件，事件在实例的methods中定义 v-on 可以简写成@-->
+        <div v-text="content"> </div> 
+    </div>   <!--这个挂载点的内容 称为模板内容-->
+     
+    <script>
+        new Vue({//实例、 只处理挂载点的内容 当模板和挂载点都设置之后，vue会自动处理
+            el:"#root", //接管哪个元素  与DOM的绑定为挂载点
+   /*模板/*/template:'', //模板内容
+            data:{//
+                msg:"hello world",    //相当于 document.getElementByID().innerHTML
+                number:123,
+                content: "<a href='#'>hello</a>"
+            },
+            methods:{//定义方法
+                handleClick:function(){//面向数据编程 
+                    this.content ="world"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

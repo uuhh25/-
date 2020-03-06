@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Todolist</title> <!--在input中输入的内容 可以在li中显示-->
+    <script src="./vue.js"></script> 
+</head>
+<body>
+   <div id="root">
+        <div>
+            <input v-model="inputvalue" type="text"/> 
+            <!-- 给input绑定一个双向数据  当输入的时候 可以改变这个变量的值 -->
+            <button @click="handleClick">提交</button> 
+            <!-- 给该按钮 绑定一个click事件  事件在Vue中的methods定义 -->
+        </div>
+        <ul>
+            <li v-for="(item,index) of list" :key="index">{{item}} </li>
+            <!-- v-for用于循环list中的每个元素 item是元素 index是索引
+             key是用来提高渲染性能的  且不能为相同的值 -->
+        </ul>
+   </div><input type="">
+<script>
+       new Vue({
+           el:"#root",  //绑定挂载点
+           data:{
+               inputvalue:"hello",//是用于在模板中呈现的内容   模板内容
+               list:[],
+           },
+           methods:{//用于给实例写事件函数
+               handleClick:function(){
+                   this.list.push(this.inputvalue);
+                   this.inputvalue='';//把input数据放进 list（li）  后输入框为空
+               }
+           }
+
+       })
+      
+    
+   </script>
+</body>
+</html>

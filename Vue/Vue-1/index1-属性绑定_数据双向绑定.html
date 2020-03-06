@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>属性绑定、双向数据绑定</title>
+    <script src="vue.js"></script> 
+</head>
+<body>
+   <div id="root">
+       <div v-bind:title ="title + ' s123'">hello world</div>
+       <!-- v-bind可以给想改变的属性 绑定到data中的一个变量中 = 后面为json的格式
+        v-bind: 可以缩写成 : -->
+        <input v-model="content" /> <!-- 对input的value进行绑定 -->
+        <div>{{content}} </div>
+        <!-- v-model 对data变量进行双向绑定： input中改变 content也会改变  -->
+   </div>
+   <script>
+       new Vue({
+           el:"#root",
+           data:{//单向绑定 只要数据决定页面
+               title:"this is hello world",
+               content:"this is content"
+           }
+
+       })
+   </script>
+</body>
+</html>

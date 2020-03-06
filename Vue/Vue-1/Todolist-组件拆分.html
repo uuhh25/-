@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Todolist-pro</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <div>
+                <input v-model="inputValue" />
+                <button @click="handleClick">提交</button>
+            </div>
+            <ul>
+               <!--<li v-for="(item,index) of list" :key="index">{{item}} </li>
+               :content="item"  设置该组件的内容获取 从list的item来 -->
+               <todo-item 
+               v-for="(item,index) of list" 
+               :key="item"
+               :content="item" 
+               :index="index"
+               @delete="handleDelete" 
+               >
+               <!--父组件可以监听子组件的一个delete事件  
+                若监听到 则可以执行methods的一个事件-->
+               </todo-item>
+            </ul>
+
+        </div>
+
+        <script>//组件创建 全局组件 在任何地方都可以使用
+            Vue.component('todo-item',{   //todo-item为组件名  
+                //ctrl+k+c 注释  ctrl+k+u 取消
+                props:['content','index'],//用于接收属性的内容 如:content="item" 
+                template:'<li @click="Click">{{content}} </li>'  , 
+                //需要的是可以变化的值 不是固定值 给这个组件中的 li绑定一个事件 
+                //事件在该组件的 methods中声明
+                methods:{ //组件也是vue实例 每个vue实例都有methods data template props
+                    Click:function(){
+                        //实现删除功能  即删除父组件中list的内容  要使用通信
+                        this.$emit('delete',this.index)  
+                        //该函数向局部组件外 发布一个delete事件
+
+                    }
+                }
+            })
+            
+            //局部组件 调用方法：在Vue实例 中的的component属性 创建、添加 TodoItem
+            // var TodoItem={
+            //     template:'<li>item</li>',
+            // }
+            
+
+            new Vue({
+                el:"#root",
+                // component:{//用于局部组件的注册 才能在这个实例使用
+                //     'todo-item':TodoItem,
+                // },
+                data:{
+                    inputValue:'hi~',
+                    list:[]
+                },
+                methods:{
+                    handleClick:function(){
+                        this.list.push(this.inputValue);//把input的输入内容放到list中 
+                        this.inputValue='';
+                    },
+                    handleDelete:function(index){
+                        this.list.splice(index,1)//从index处开始 删除一个元素
+                        //splice 从list[index] 位置开始 删除一个元素
+                        
+                    }
+                }
+            })
+
+            /*组件：页面上的某一部分   
+            //如何定义组件：
+            全局组件用 Vue.component(name,{
+                模板的元素或...template ：
+                接收的内容 props
+            })
+            局部组件 var Name={
+                模板的元素或...template ：
+            }
+            且在要使用的Vue实例中 进行注册：
+            component:{
+                'name' 新标签名(组件名)=Name
+            }
+            //组件和vue实例的关系：每一个组件都是一个小的Vue实例
+            //若根Vue实例没有设置模板 则会把挂载点中的所有内容当作模板
+            //组件和组件之间的通信：
+            */
+        </script>
+    </body>
+</html>
