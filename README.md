@@ -15,4 +15,4 @@ day19
 
 Vue的练习<br/>
 [todolist](https://uuhh25.github.io/-/Vue/Vue-1/index4-Todolist.html) v-for 双向数据的应用 <br/>
-[todolist-组件](https://uuhh25.github.io/-/Vue/Vue-1/Todolist-组件拆分.html)  组件的初步应用
+[todolist-组件](https://uuhh25.github.io/-/Vue/Vue-1/Todolist-组件拆分.html)  组件的初步应用、可以添加和点击删除
